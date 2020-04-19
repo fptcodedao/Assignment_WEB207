@@ -1,0 +1,40 @@
+<section id="featured-products">
+    <div class="page-header text-center wsub">
+        <h2>Featured Products</h2>
+    </div>
+    <!--/ page-header -->
+    <owl-carousel-o [id]="'products-carousel'">
+        <ng-container *ngFor="let product of products">
+            <ng-template carouselSlide [id]="product.id">
+                <div class="item product">
+                    <span class="sale-label">SALE</span>
+                    <!-- / sale-label -->
+                    <a href="single-product.html" class="product-link"></a>
+                    <!-- / product-link -->
+                    <img [src]="product.image" alt="">
+                    <!-- / product-image -->
+                
+                    <!-- product-hover-tools -->
+                    <div class="product-hover-tools">
+                        <a href="single-product.html" class="view-btn">
+                            <i class="lnr lnr-eye"></i>
+                        </a>
+                        <a href="shopping-cart.html" class="add-to-cart">
+                            <i class="lnr lnr-cart"></i>
+                        </a>
+                    </div><!-- / product-hover-tools -->
+                
+                    <!-- product-details -->
+                    <div class="product-details">
+                        <h3 class="product-title">{{ product.name }}</h3>
+                        <h6 class="product-price">
+                            <del>{{ product.price }}</del>
+                            <span class="sale-price">$79</span>
+                        </h6>
+                    </div><!-- / product-details -->
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</section>
+<!-- / featured-products -->

@@ -1,0 +1,18 @@
+<ngb-carousel *ngIf="carousels">
+    <ng-template ngbSlide *ngFor="let carousel of carousels" [style.display]="'none'">
+        <div class="picsum-img-wrapper">
+            <img [src]="carousel.image" [alt]="carousel.name">
+        </div>
+        <div class="carousel-caption">
+            <h3 class="slide-title fadeInDown animated first">
+                <span class="text-primary">in</span>Cart - Furniture
+            </h3>
+            <p class="slide-text flipInX animated second">
+                Vivamus facilisis sapien enim, eget lobortis ante faucibus vel. In
+                hendrerit arcu eget arcu fringilla.</p>
+            <a href="index2.html" class="btn btn-lg btn-primary-filled btn-pill fadeInUp animated third">
+                <i class="lnr lnr-store"></i> <span>Visit Shop</span>
+            </a>
+        </div>
+    </ng-template>
+</ngb-carousel>

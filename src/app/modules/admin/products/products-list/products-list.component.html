@@ -1,0 +1,7 @@
+<div *ngIf="productsList">
+    <table>
+        <tr *ngFor="let product of productsList">
+            {{ product.created_at.toDate() | date }}
+        </tr>
+    </table>
+</div>

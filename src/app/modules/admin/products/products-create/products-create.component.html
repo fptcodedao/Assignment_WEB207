@@ -3,18 +3,37 @@
         <div class="box">
             <div class="box-header">Create Products</div>
             <div class="box-body">
-                <form formGroup="createPform" (ngSubmit)="onSubmit()" novalidate>
+                <form [formGroup]="createPform" (ngSubmit)="onSubmit()" novalidate>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" formControlName="name" class="form-control">
+                        <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors?.required">Không để trống tên sản phẩm</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
                         <input type="text" formControlName="price" class="form-control">
+                        <div *ngIf="f.price.touched && f.price.errors" class="invalid-feedback">
+                            <div *ngIf="f.price.errors?.required">Không để trống giá sản phẩm</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="categories">Danh mục</label>
+                        <select formControlName="categories" class="form-control">
+                            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                        </select>
+                        <div *ngIf="f.categories.touched && f.categories.errors" class="invalid-feedback">
+                            <div *ngIf="f.categories.errors?.required">Không để trống danh mục</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="image_url">Image Url</label>
-                        <input type="text" formControlName="image_url" class="form-control">
+                        <input type="file" (change)="onFileChange($event)" formControlName="image_url"
+                            class="form-control">
+                        <div *ngIf="f.image_url.touched && f.image_url.errors" class="invalid-feedback">
+                            <div *ngIf="f.image_url.errors?.required">Không để trống ảnh sản phẩm</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
@@ -22,7 +41,8 @@
                         </textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" [disabled]="!createPform.valid || submitted"
+                            class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>

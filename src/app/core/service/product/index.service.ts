@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { IProduct } from './../../models/product.model';
+import { IProduct } from '../../../models/product.model';
 import { catchError } from 'rxjs/operators';
-import { HandleErrorService } from './../handle-error/index.service';
+import { HandleErrorService } from '../../handle-error/index.service';
 
 @Injectable({
   providedIn: 'root'

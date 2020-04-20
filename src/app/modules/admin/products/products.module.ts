@@ -5,7 +5,6 @@ import { ProductRoutingRoutes } from './product-routing.routing';
 
 import { ProductsListComponent } from './products-list/products-list.component';
 
-
 @NgModule({
   declarations: [ProductsComponent, ProductsListComponent],
   imports: [

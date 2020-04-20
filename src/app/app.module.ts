@@ -5,8 +5,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { firebaseConfig } from '../config/firebase';
-import { ProductService } from './core/product/index.service';
 import { Title } from '@angular/platform-browser';
+import { ProductService } from './core/service/product/index.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -14,8 +16,10 @@ import { Title } from '@angular/platform-browser';
   ],
   imports: [
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     AppRoutingModule
   ],
   providers: [

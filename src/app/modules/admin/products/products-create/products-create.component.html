@@ -1,8 +1,30 @@
 <div class="row">
     <div class="col-md-12">
         <div class="box">
-            <div class="box-header">
-                Create Product
+            <div class="box-header">Create Products</div>
+            <div class="box-body">
+                <form formGroup="createPform" (ngSubmit)="onSubmit()" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" formControlName="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="text" formControlName="price" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="image_url">Image Url</label>
+                        <input type="text" formControlName="image_url" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea formControlName="description" class="form-control" cols="5" rows="5">
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

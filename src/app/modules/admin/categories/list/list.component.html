@@ -1,1 +1,37 @@
-<p>list works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">Danh sách danh mục</div>
+            <div class="box-body">
+                <table *ngIf="categories" datatable class="table table-brodered">
+                    <thead>
+                        <tr>
+                            <th width="50px">#</th>
+                            <th>Tên danh mục</th>
+                            <th>Mô tả</th>
+                            <th>Ảnh đại diện</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            *ngFor="let category of categories | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; let i = index; trackBy: trackCategoryByFn;">
+                            <td>{{ (page-1) * pageSize + i +1 }}</td>
+                            <td>{{ category.name }}</td>
+                            <td>{{ category.description }}</td>
+                            <td><img [src]="category.image_url" width="50px" [alt]="category.name" /></td>
+                            <td>{{ category.created_at.toDate() | date }}</td>
+                            <td>
+                                <button (click)="deleteCategoryById(category.id)" class="btn btn-primary btn-sm"><i
+                                        class="fa fa-trash" aria-hidden="true"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="pageSize"
+                    [collectionSize]="categories.length">
+                </ngb-pagination>
+            </div>
+        </div>
+    </div>
+</div>

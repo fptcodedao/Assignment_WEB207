@@ -14,11 +14,17 @@ const routes: Routes = [
       },
       {
         path: 'list',
-        component: ProductsListComponent
+        component: ProductsListComponent,
+        data: {
+          title: 'List Products'
+        }
       },
       {
         path: 'create',
-        component: ProductsCreateComponent
+        component: ProductsCreateComponent,
+        data: {
+          title: 'Create Products'
+        }
       }
     ]
   },

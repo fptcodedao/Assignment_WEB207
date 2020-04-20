@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/core/product/index.service';
+import { ProductService } from 'src/app/core/service/product/index.service';
 import { IProduct } from './../../../../models/product.model';
 import { map } from 'rxjs/operators';
 

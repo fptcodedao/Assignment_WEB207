@@ -1,28 +1,29 @@
 import { Routes, RouterModule } from '@angular/router';
-import { CategoriesComponent } from './categories.component';
+import { CategoriesCreateComponent } from './categories-create/categories-create.component';
 import { ListComponent } from './list/list.component';
-import { CreateComponent } from './create/create.component';
-import { EditComponent } from './edit/edit.component';
+import { CategoriesComponent } from './categories.component';
 
 const routes: Routes = [
   {
     path: '',
     component: CategoriesComponent,
+    data: {
+      title: 'Danh mục'
+    },
     children: [
       {
-        path: '',
-        component: ListComponent,
+        path: 'create',
+        component: CategoriesCreateComponent,
         data: {
-          title: 'Danh Sách Danh Mục'
+          title: 'Thêm danh mục'
         }
       },
       {
-        path: 'create',
-        component: CreateComponent
-      },
-      {
-        path: 'edit/:categoryId',
-        component: EditComponent
+        path: 'list',
+        component: ListComponent,
+        data: {
+          title: 'Danh sách danh mục'
+        }
       }
     ]
   },

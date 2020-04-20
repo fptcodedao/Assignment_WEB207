@@ -1,7 +1,40 @@
-<div *ngIf="productsList">
-    <table>
-        <tr *ngFor="let product of productsList">
-            {{ product.created_at.toDate() | date }}
-        </tr>
-    </table>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">Product List</div>
+            <div class="box-body">
+                <table class="table table-brodered">
+                    <thead>
+                        <th>#</th>
+                        <th width="100px">Name</th>
+                        <th>Price</th>
+                        <th width="100px">Image</th>
+                        <th width="350px">Description</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of productsList">
+                            <td>{{ product.id }}</td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.price }}</td>
+                            <td *ngIf="product?.image_url">
+                                <img [src]="product.image_url" width="100px" height="100px" [alt]="product.name">
+                            </td>
+                            <td>{{ product.description }}</td>
+                            <td>{{ product.created_at.toDate() }}</td>
+                            <td>
+                                <a [routerLink]="['/admin', 'products', product.id]" class="btn btn-info btn-sm"><i
+                                        class="fa fa-eye" aria-hidden="true"></i></a>
+                                <a [routerLink]="['/admin', 'products', product.id, 'edit']"
+                                    class="btn btn-success btn-sm"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                <!-- <button (click)="buttonDeleted(product.id)" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProductService } from './../../../../core/service/product/index.service';
+import { ProductService } from '../../../../core/service/product/index.service';
 import { CategoriesService } from 'src/app/core/service/categories/index.service';
-import { ICategories } from './../../../../models/categories.model';
+import { ICategories } from '../../../../models/categories.model';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ToastrService } from 'ngx-toastr';
 import { map, last, switchMap } from 'rxjs/operators';

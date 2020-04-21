@@ -18,6 +18,14 @@ const routes: Routes = [
       {
         path: 'categories',
         loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
+      },
+      {
+        path: 'banner',
+        loadChildren: () => import('./banner/banner.module').then(m => m.BannerModule)
+      },
+      {
+        path: 'posts',
+        loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule)
       }
     ]
   },

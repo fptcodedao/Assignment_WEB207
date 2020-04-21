@@ -19,7 +19,7 @@ describe('FeaturedProductsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should banner-create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/core/service/product/index.service';
-import { IProduct } from './../../../../models/product.model';
+import { IProduct } from '../../../../models/product.model';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 

@@ -9,15 +9,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  protected productcollection: string;
+  protected production: string;
   protected collection: any;
   constructor(
     private firestore: AngularFirestore,
     private handle: HandleErrorService
   ) {
     console.log('product serivce');
-    this.productcollection = 'products';
-    this.collection = this.firestore.collection(this.productcollection);
+    this.production = 'products';
+    this.collection = this.firestore.collection(this.production);
   }
 
   getProductList(): Observable<Array<any>> {

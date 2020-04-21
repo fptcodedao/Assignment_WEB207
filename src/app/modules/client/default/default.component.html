@@ -9,39 +9,13 @@
             bibendum dolor id mi dignissim pulvinar. Proin tincidunt elit in augue congue efficitur.</p>
         <div class="row">
 
-            <div class="col-sm-4 category">
+            <div *ngFor="let category of categories | slice: 0 : 3" class="col-sm-4 category">
                 <a href="index.html">
                     <div class="category-item">
-                        <img [src]="'assets/client/images/category1.jpg'" alt="">
+                        <img [src]="category.image_url" alt="">
                         <div class="overlay">
                             <div class="caption">
-                                <h4>Fashion</h4>
-                            </div>
-                        </div>
-                    </div><!-- / category-item -->
-                </a>
-            </div><!-- / category -->
-
-            <div class="col-sm-4 category">
-                <a href="index2.html">
-                    <div class="category-item">
-                        <img [src]="'assets/client/images/category2.jpg'" alt="">
-                        <div class="overlay">
-                            <div class="caption">
-                                <h4>Furniture</h4>
-                            </div>
-                        </div>
-                    </div><!-- / category-item -->
-                </a>
-            </div><!-- / category -->
-
-            <div class="col-sm-4 category">
-                <a href="index3.html">
-                    <div class="category-item">
-                        <img [src]="'assets/client/images/category3.jpg'" alt="">
-                        <div class="overlay">
-                            <div class="caption">
-                                <h4>Art</h4>
+                                <h4>{{category.name}}</h4>
                             </div>
                         </div>
                     </div><!-- / category-item -->
@@ -54,7 +28,7 @@
 <!-- / categories -->
 
 <!-- featured-products -->
-<app-featured-products [products]="featuredproducts"></app-featured-products>
+<app-featured-products [products]="products"></app-featured-products>
 <!-- / featured-products -->
 
 <!-- shop 3col -->
@@ -67,10 +41,10 @@
         <div id="grid" class="row">
 
             <!-- product -->
-            <div class="col-xs-6 col-md-4 product">
+            <div *ngFor="let product of products | slice: 0: 8" class="col-xs-6 col-md-4 product">
                 <a href="single-product.html" class="product-link"></a>
                 <!-- / product-link -->
-                <img [src]="'assets/client/images/f-product1.jpg'" alt="">
+                <img [src]="product.image_url" alt="">
                 <!-- / product-image -->
 
                 <!-- product-hover-tools -->
@@ -85,202 +59,8 @@
 
                 <!-- product-details -->
                 <div class="product-details">
-                    <h3 class="product-title">Women's Shirt</h3>
-                    <h6 class="product-price">$59</h6>
-                </div><!-- / product-details -->
-            </div><!-- / product -->
-
-            <!-- product -->
-            <div class="col-xs-6 col-md-4 product">
-                <span class="sale-label">SALE</span>
-                <a href="single-product.html" class="product-link"></a>
-                <!-- / product-link -->
-                <img [src]="'assets/client/images/f-product2.jpg'" alt="">
-                <!-- / product-image -->
-
-                <!-- product-hover-tools -->
-                <div class="product-hover-tools">
-                    <a href="single-product.html" class="view-btn">
-                        <i class="lnr lnr-eye"></i>
-                    </a>
-                    <a href="shopping-cart.html" class="add-to-cart">
-                        <i class="lnr lnr-cart"></i>
-                    </a>
-                </div><!-- / product-hover-tools -->
-
-                <!-- product-details -->
-                <div class="product-details">
-                    <h3 class="product-title">Women's Shirt</h3>
-                    <h6 class="product-price"><del>$49</del> <span class="sale-price">$29</span></h6>
-                </div><!-- / product-details -->
-            </div><!-- / product -->
-
-            <!-- product -->
-            <div class="col-xs-6 col-md-4 product">
-                <a href="single-product.html" class="product-link"></a>
-                <!-- / product-link -->
-                <img [src]="'assets/client/images/f-product3.jpg'" alt="">
-                <!-- / product-image -->
-
-                <!-- product-hover-tools -->
-                <div class="product-hover-tools">
-                    <a href="single-product.html" class="view-btn">
-                        <i class="lnr lnr-eye"></i>
-                    </a>
-                    <a href="shopping-cart.html" class="add-to-cart">
-                        <i class="lnr lnr-cart"></i>
-                    </a>
-                </div><!-- / product-hover-tools -->
-
-                <!-- product-details -->
-                <div class="product-details">
-                    <h3 class="product-title">Women's Shirt</h3>
-                    <h6 class="product-price">$99</h6>
-                </div><!-- / product-details -->
-            </div><!-- / product -->
-
-            <!-- product -->
-            <div class="col-xs-6 col-md-4 product">
-                <a href="single-product.html" class="product-link"></a>
-                <!-- / product-link -->
-                <img [src]="'assets/client/images/f-product4.jpg'" alt="">
-                <!-- / product-image -->
-
-                <!-- product-hover-tools -->
-                <div class="product-hover-tools">
-                    <a href="single-product.html" class="view-btn">
-                        <i class="lnr lnr-eye"></i>
-                    </a>
-                    <a href="shopping-cart.html" class="add-to-cart">
-                        <i class="lnr lnr-cart"></i>
-                    </a>
-                </div><!-- / product-hover-tools -->
-
-                <!-- product-details -->
-                <div class="product-details">
-                    <h3 class="product-title">Women's Shirt</h3>
-                    <h6 class="product-price">$29</h6>
-                </div><!-- / product-details -->
-            </div><!-- / product -->
-
-            <!-- product -->
-            <div class="col-xs-6 col-md-4 product">
-                <a href="single-product.html" class="product-link"></a>
-                <!-- / product-link -->
-                <img [src]="'assets/client/images/f-product5.jpg'" alt="">
-                <!-- / product-image -->
-
-                <!-- product-hover-tools -->
-                <div class="product-hover-tools">
-                    <a href="single-product.html" class="view-btn">
-                        <i class="lnr lnr-eye"></i>
-                    </a>
-                    <a href="shopping-cart.html" class="add-to-cart">
-                        <i class="lnr lnr-cart"></i>
-                    </a>
-                </div><!-- / product-hover-tools -->
-
-                <!-- product-details -->
-                <div class="product-details">
-                    <h3 class="product-title">Women's Jeans</h3>
-                    <h6 class="product-price">$69</h6>
-                </div><!-- / product-details -->
-            </div><!-- / product -->
-
-            <!-- product -->
-            <div class="col-xs-6 col-md-4 product">
-                <a href="single-product.html" class="product-link"></a>
-                <!-- / product-link -->
-                <img [src]="'assets/client/images/f-product6.jpg'" alt="">
-                <!-- / product-image -->
-
-                <!-- product-hover-tools -->
-                <div class="product-hover-tools">
-                    <a href="single-product.html" class="view-btn">
-                        <i class="lnr lnr-eye"></i>
-                    </a>
-                    <a href="shopping-cart.html" class="add-to-cart">
-                        <i class="lnr lnr-cart"></i>
-                    </a>
-                </div><!-- / product-hover-tools -->
-
-                <!-- product-details -->
-                <div class="product-details">
-                    <h3 class="product-title">Women's Shirt</h3>
-                    <h6 class="product-price">$39</h6>
-                </div><!-- / product-details -->
-            </div><!-- / product -->
-
-            <!-- product -->
-            <div class="col-xs-6 col-md-4 product">
-                <a href="single-product.html" class="product-link"></a>
-                <!-- / product-link -->
-                <img [src]="'assets/client/images/f-product7.jpg'" alt="">
-                <!-- / product-image -->
-
-                <!-- product-hover-tools -->
-                <div class="product-hover-tools">
-                    <a href="single-product.html" class="view-btn">
-                        <i class="lnr lnr-eye"></i>
-                    </a>
-                    <a href="shopping-cart.html" class="add-to-cart">
-                        <i class="lnr lnr-cart"></i>
-                    </a>
-                </div><!-- / product-hover-tools -->
-
-                <!-- product-details -->
-                <div class="product-details">
-                    <h3 class="product-title">Designer Watch</h3>
-                    <h6 class="product-price">$599</h6>
-                </div><!-- / product-details -->
-            </div><!-- / product -->
-
-            <!-- product -->
-            <div class="col-xs-6 col-md-4 product">
-                <a href="single-product.html" class="product-link"></a>
-                <!-- / product-link -->
-                <img [src]="'assets/client/images/f-product8.jpg'" alt="">
-                <!-- / product-image -->
-
-                <!-- product-hover-tools -->
-                <div class="product-hover-tools">
-                    <a href="single-product.html" class="view-btn">
-                        <i class="lnr lnr-eye"></i>
-                    </a>
-                    <a href="shopping-cart.html" class="add-to-cart">
-                        <i class="lnr lnr-cart"></i>
-                    </a>
-                </div><!-- / product-hover-tools -->
-
-                <!-- product-details -->
-                <div class="product-details">
-                    <h3 class="product-title">Men's Gloves</h3>
-                    <h6 class="product-price">$199</h6>
-                </div><!-- / product-details -->
-            </div><!-- / product -->
-
-            <!-- product -->
-            <div class="col-xs-6 col-md-4 product">
-                <span class="sale-label">SALE</span>
-                <a href="single-product.html" class="product-link"></a>
-                <!-- / product-link -->
-                <img [src]="'assets/client/images/f-product9.jpg'" alt="">
-                <!-- / product-image -->
-
-                <!-- product-hover-tools -->
-                <div class="product-hover-tools">
-                    <a href="single-product.html" class="view-btn">
-                        <i class="lnr lnr-eye"></i>
-                    </a>
-                    <a href="shopping-cart.html" class="add-to-cart">
-                        <i class="lnr lnr-cart"></i>
-                    </a>
-                </div><!-- / product-hover-tools -->
-
-                <!-- product-details -->
-                <div class="product-details">
-                    <h3 class="product-title">Leather Bag</h3>
-                    <h6 class="product-price"><del>$149</del> <span class="sale-price">$79</span></h6>
+                    <h3 class="product-title">{{product.name}}</h3>
+                    <h6 class="product-price">{{product?.price | currency: 'VND'}}</h6>
                 </div><!-- / product-details -->
             </div><!-- / product -->
 
@@ -353,23 +133,3 @@
     </div><!-- / container -->
 </section>
 <!-- / newsletter -->
-
-<!-- brands carousel -->
-<section id="brands">
-    <h2 class="hidden">&nbsp;</h2>
-    <div class="container">
-        <div id="brands-carousel" class="owl-carousel">
-            <div class="item"><img [src]="'assets/client/images/brand1.png'" alt=""></div>
-            <div class="item"><img [src]="'assets/client/images/brand2.png'" alt=""></div>
-            <div class="item"><img [src]="'assets/client/images/brand3.png'" alt=""></div>
-            <div class="item"><img [src]="'assets/client/images/brand4.png'" alt=""></div>
-            <div class="item"><img [src]="'assets/client/images/brand5.png'" alt=""></div>
-            <div class="item"><img [src]="'assets/client/images/brand6.png'" alt=""></div>
-            <div class="item"><img [src]="'assets/client/images/brand7.png'" alt=""></div>
-            <div class="item"><img [src]="'assets/client/images/brand8.png'" alt=""></div>
-            <div class="item"><img [src]="'assets/client/images/brand9.png'" alt=""></div>
-            <div class="item"><img [src]="'assets/client/images/brand10.png'" alt=""></div>
-        </div>
-    </div><!-- / container -->
-</section>
-<!-- / brands carousel -->

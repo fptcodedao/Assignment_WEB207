@@ -1,6 +1,9 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ClientComponent } from './client.component';
 import { DefaultComponent } from './../client/default/default.component';
+import {AboutComponent} from './component/about/about.component';
+import {ServiceComponent} from './component/service/service.component';
+import {ContactComponent} from './component/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -12,6 +15,27 @@ const routes: Routes = [
         component: DefaultComponent,
         data: {
           title: 'Home'
+        }
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
+        data: {
+          title: 'About'
+        }
+      },
+      {
+        path: 'service',
+        component: ServiceComponent,
+        data: {
+          title: 'Service'
+        }
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
+        data: {
+          title: 'Contact'
         }
       }
     ]

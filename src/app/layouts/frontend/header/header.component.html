@@ -23,29 +23,29 @@
             <a class="navbar-brand" href="#"><img [src]="'assets/client/images/logo.png'" alt=""></a>
             <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
+                    <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="nav-link" [routerLink]="'/'">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                    <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="nav-link" [routerLink]="'/about'">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                    <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="nav-link" [routerLink]="'/service'">Services</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                    <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="nav-link" [routerLink]="'/contact'">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><!-- / navbar -->
 
-    <div id="header-sliders">
+    <div id="header-sliders" *ngIf="isActiveSlide">
         <!-- slider -->
         <app-carousel></app-carousel>
         <!-- / slider-->
     </div><!-- / sliders -->
-
+    <app-page-header *ngIf="!isActiveSlide" [title]="title"></app-page-header>
 </header>

@@ -4,16 +4,16 @@
     </div>
     <!--/ page-header -->
     <owl-carousel-o [id]="'products-carousel'">
-        <ng-container *ngFor="let product of products">
+        <ng-container *ngFor="let product of products | slice: 0: 10">
             <ng-template carouselSlide [id]="product.id">
                 <div class="item product">
                     <span class="sale-label">SALE</span>
                     <!-- / sale-label -->
                     <a href="single-product.html" class="product-link"></a>
                     <!-- / product-link -->
-                    <img [src]="product.image" alt="">
+                    <img [src]="product.image_url" alt="">
                     <!-- / product-image -->
-                
+
                     <!-- product-hover-tools -->
                     <div class="product-hover-tools">
                         <a href="single-product.html" class="view-btn">
@@ -23,7 +23,7 @@
                             <i class="lnr lnr-cart"></i>
                         </a>
                     </div><!-- / product-hover-tools -->
-                
+
                     <!-- product-details -->
                     <div class="product-details">
                         <h3 class="product-title">{{ product.name }}</h3>

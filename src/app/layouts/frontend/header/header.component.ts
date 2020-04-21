@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, OnChanges, OnInit, ViewEncapsulation, DoCheck} from '@angular/core';
+import {Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +8,23 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, DoCheck {
   isMenuCollapsed = true;
-  constructor() { }
+  isActiveSlide = false;
+  title: string;
+  constructor(
+    private router: Router,
+    private titleService: Title
+  ) { }
 
   ngOnInit(): void {
+
+  }
+
+  ngDoCheck(){
+    const url = this.router.url;
+    this.isActiveSlide = url === '/';
+    this.title = this.titleService.getTitle();
   }
 
   MenuCollapsed() {

@@ -6,6 +6,8 @@ import { SliderComponent } from './slider/slider.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import {RouterModule} from '@angular/router';
 
 const CONTAINER = [
   HeaderComponent, FooterComponent, SliderComponent, CarouselComponent
@@ -13,9 +15,11 @@ const CONTAINER = [
 
 @NgModule({
   declarations: [
-    ...CONTAINER
+    ...CONTAINER,
+    PageHeaderComponent
   ],
   imports: [
+    RouterModule,
     CommonModule,
     NgbModule,
     CarouselModule

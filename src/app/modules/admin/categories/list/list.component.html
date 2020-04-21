@@ -22,6 +22,8 @@
                             <td><img [src]="category.image_url" width="50px" [alt]="category.name" /></td>
                             <td>{{ category.created_at.toDate() | date }}</td>
                             <td>
+                              <a [routerLink]="[ '/admin', 'categories', category.id, 'edit' ]"
+                                 class="btn btn-success btn-sm"><i class="fa fa-edit" aria-hidden="true"></i></a>
                                 <button (click)="deleteCategoryById(category.id)" class="btn btn-primary btn-sm"><i
                                         class="fa fa-trash" aria-hidden="true"></i></button>
                             </td>

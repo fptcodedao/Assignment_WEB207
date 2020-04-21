@@ -7,10 +7,12 @@ import { CategoriesRoutingRoutes } from './categories-routing.routing';
 import { CategoriesComponent } from './categories.component';
 import { ListComponent } from './list/list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditComponent } from './edit/edit.component';
+import { DefaultComponent } from './default/default.component';
 
 
 @NgModule({
-  declarations: [CategoriesComponent, CategoriesCreateComponent, ListComponent],
+  declarations: [CategoriesComponent, CategoriesCreateComponent, ListComponent, EditComponent, DefaultComponent],
   imports: [
     CommonModule,
     NgbModule,

@@ -34,7 +34,7 @@ export class CategoriesService {
   }
 
   editCategoriesById(data: ICategories) {
-    return this.collection.doc(data.id).set(data);
+    return this.collection.doc(data.id).set(data, {merge: true});
   }
 
   deleteCategoriesById(id: string): Promise<any> {

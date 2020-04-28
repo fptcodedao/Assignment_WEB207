@@ -9,8 +9,8 @@
             bibendum dolor id mi dignissim pulvinar. Proin tincidunt elit in augue congue efficitur.</p>
         <div class="row">
 
-            <div *ngFor="let category of categories | slice: 0 : 3" class="col-sm-4 category">
-                <a href="index.html">
+            <div *ngFor="let category of categories | slice: 1 : 4" class="col-sm-4 category">
+                <a>
                     <div class="category-item">
                         <img [src]="category.image_url" alt="">
                         <div class="overlay">
@@ -41,18 +41,18 @@
         <div id="grid" class="row">
 
             <!-- product -->
-            <div *ngFor="let product of products | slice: 0: 8" class="col-xs-6 col-md-4 product">
-                <a href="single-product.html" class="product-link"></a>
+            <div *ngFor="let product of products | slice: 0: 9" class="col-xs-6 col-md-4 product">
+                <a [routerLink]="[ '/products', product.id]" class="product-link"></a>
                 <!-- / product-link -->
                 <img [src]="product.image_url" alt="">
                 <!-- / product-image -->
 
                 <!-- product-hover-tools -->
                 <div class="product-hover-tools">
-                    <a href="single-product.html" class="view-btn">
+                    <a [routerLink]="[ '/products', product.id]" class="view-btn">
                         <i class="lnr lnr-eye"></i>
                     </a>
-                    <a href="shopping-cart.html" class="add-to-cart">
+                    <a class="add-to-cart">
                         <i class="lnr lnr-cart"></i>
                     </a>
                 </div><!-- / product-hover-tools -->

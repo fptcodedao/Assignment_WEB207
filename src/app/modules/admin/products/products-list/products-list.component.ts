@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ProductsListComponent implements OnInit {
   productsList: Array<IProduct> = [];
+  productSearch: Array<IProduct>;
   page = 1;
   pageSize = 5;
   constructor(
@@ -29,6 +30,9 @@ export class ProductsListComponent implements OnInit {
         });
         return product;
       });
+      this.productSearch = [
+        ...this.productsList
+      ];
     });
   }
 
@@ -63,6 +67,14 @@ export class ProductsListComponent implements OnInit {
 
   trackProductByFn(item, index) {
     return item.id;
+  }
+
+  searchName(event) {
+    const { value } = event.target;
+    return this.productsList = this.productSearch.filter(c => {
+      let regex = new RegExp(value, 'mi');
+      return regex.test(c.name) || regex.test(c.description) || regex.test(c.price);
+    });
   }
 
 }

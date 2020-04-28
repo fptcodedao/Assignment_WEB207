@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 })
 export class ListComponent implements OnInit {
   categories: Array<ICategories> = [];
+  categoriesSearch: Array<ICategories> = [];
   page = 1;
   pageSize = 5;
   constructor(
@@ -27,6 +28,9 @@ export class ListComponent implements OnInit {
           ...item.payload.doc.data()
         };
       });
+      this.categoriesSearch = [
+        ...this.categories
+      ];
     });
   }
 
@@ -59,6 +63,14 @@ export class ListComponent implements OnInit {
       }
     });
 
+  }
+
+  searchName(event) {
+    const { value } = event.target;
+    return this.categories = this.categoriesSearch.filter(c => {
+      let regex = new RegExp(value, 'mi');
+      return regex.test(c.name) || regex.test(c.description);
+    });
   }
 
   trackCategoryByFn(item, index) {

@@ -10,15 +10,27 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './component/about/about.component';
 import { ServiceComponent } from './component/service/service.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { ShopComponent } from './component/shop/shop.component';
+import { ProductModule } from './product/product.module';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 @NgModule({
-  declarations: [DefaultComponent, ClientComponent, FeaturedProductsComponent, AboutComponent, ServiceComponent, ContactComponent],
+  declarations: [
+    DefaultComponent,
+    ClientComponent,
+    FeaturedProductsComponent,
+    AboutComponent,
+    ServiceComponent,
+    ContactComponent,
+    ShopComponent,
+    NotFoundComponent],
   imports: [
     CommonModule,
     NgbModule,
     FrontendModule,
     CarouselModule,
-    ClientRoutingRoutes
+    ClientRoutingRoutes,
+    ProductModule
   ]
 })
 export class ClientModule { }

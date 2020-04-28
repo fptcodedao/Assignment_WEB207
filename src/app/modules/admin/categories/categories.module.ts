@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { CategoriesCreateComponent } from './categories-create/categories-create.component';
 import { CategoriesRoutingRoutes } from './categories-routing.routing';
@@ -16,6 +16,7 @@ import { DefaultComponent } from './default/default.component';
   imports: [
     CommonModule,
     NgbModule,
+    FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 5000,

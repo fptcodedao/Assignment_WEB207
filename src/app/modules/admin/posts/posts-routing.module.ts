@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PostsComponent} from './posts.component';
-import {ListComponent} from './list/list.component';
-import {CreateComponent} from './create/create.component';
-import {EditComponent} from './edit/edit.component';
+import { PostsComponent } from './posts.component';
+import { ListComponent } from './list/list.component';
+import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 
 const routes: Routes = [
@@ -27,7 +27,10 @@ const routes: Routes = [
       },
       {
         path: 'list',
-        component: ListComponent
+        component: ListComponent,
+        data: {
+          title: 'Danh sách bài đăng'
+        }
       },
       {
         path: ':id',

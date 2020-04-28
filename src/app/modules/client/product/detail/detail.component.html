@@ -1,0 +1,109 @@
+<!-- shop single-product -->
+<section id="shop">
+    <div class="container" *ngIf="product">
+        <div class="row">
+
+            <!-- product content area -->
+            <div class="col-sm-6 col-md-7 content-area">
+                <div class="product-content-area">
+                    <div id="product-slider" class="carousel slide" data-ride="carousel">
+                        <img [src]="product.image_url" alt="">
+                    </div><!-- / product-slider -->
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#description" role="tab" data-toggle="tab"
+                                aria-expanded="true">Description</a></li>
+                    </ul>
+                    <!-- / nav-tabs -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane animated fadeIn active" id="description">
+                            <p>{{product.description}}</p>
+                        </div>
+                        <!-- / description-tab -->
+                    </div>
+                    <!-- / tab-content -->
+                </div><!-- / product-content-area -->
+
+                <!-- add review -->
+                <div id="add-review" class="space-top-30">
+                    <h4>Leave a review</h4>
+                    <div class="row">
+                        <div class="col-sm-4 review-form">
+                            <input type="text" class="form-control" placeholder="*Name" required>
+                        </div>
+                        <div class="col-sm-4 review-form">
+                            <input type="email" class="form-control" placeholder="*Email" required>
+                        </div>
+                        <div class="col-sm-4 review-form">
+                            <select class="form-control">
+                                <option>5 Stars</option>
+                                <option>4 Stars</option>
+                                <option>3 Stars</option>
+                                <option>2 Stars</option>
+                                <option>1 Star</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12 review-form">
+                            <textarea rows="7" class="form-control" placeholder="*Review" required></textarea>
+                            <button type="submit" class="btn btn-submit btn-primary-filled btn-rounded">Submit
+                                Review</button>
+                        </div>
+                    </div><!-- / row -->
+                </div>
+                <!-- / add review -->
+
+            </div>
+            <!-- / project-content-area -->
+
+            <!-- project sidebar area -->
+            <div class="col-sm-6 col-md-5 product-sidebar">
+                <div class="product-details">
+                    <h4>{{product.name}}</h4>
+                    <div class="product-info">
+                        <div class="info">
+                            <p><i class="lnr lnr-tag"></i><span>Price:
+                                    {{product.price | currency: 'VND'}}
+                                </span></p>
+                        </div>
+                        <div class="info">
+                            <p>
+                                <i class="lnr lnr-heart"></i>
+                                <span>Category:
+                                    <a *ngIf="product.categories" href="#">
+                                        {{product.categories.name}}</a>
+                                </span>
+                            </p>
+                        </div>
+                    </div><!-- / project-info -->
+
+                    <div class="buy-product">
+                        <div class="options">
+                            <input type="number" step="1" min="0" name="cart" value="1" title="Qty"
+                                class="input-text qty text" size="4">
+                        </div>
+                        <!-- / options -->
+
+                        <div class="space-25">&nbsp;</div>
+
+                        <a href="shopping-cart.html" class="btn btn-primary-filled btn-rounded"><i
+                                class="lnr lnr-cart"></i><span> Add to Cart</span></a>
+                        <a href="checkout.html" class="btn btn-success-filled btn-rounded"><i
+                                class="lnr lnr-heart"></i><span> Buy Now</span></a>
+                    </div>
+
+                    <div class="info-buttons">
+                        <a href="#add-review" class="page-scroll btn btn-default btn-rounded"><i
+                                class="lnr lnr-star"></i><span> Leave a review</span></a>
+                        <a [routerLink]="[ '/contact']" class="btn btn-primary btn-rounded"><i
+                                class="lnr lnr-phone-handset"></i><span> Contact Us</span></a>
+                    </div><!-- / info-buttons -->
+
+                </div><!-- product-details -->
+
+            </div><!-- / col-sm-4 col-md-3 -->
+            <!-- / project sidebar area -->
+
+        </div><!-- / row -->
+    </div><!-- / container -->
+</section>
+<!-- / shop single-product -->

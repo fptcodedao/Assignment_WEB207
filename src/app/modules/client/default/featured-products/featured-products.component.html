@@ -7,29 +7,17 @@
         <ng-container *ngFor="let product of products | slice: 0: 10">
             <ng-template carouselSlide [id]="product.id">
                 <div class="item product">
-                    <span class="sale-label">SALE</span>
+                    <!-- <span class="sale-label">SALE</span> -->
                     <!-- / sale-label -->
-                    <a href="single-product.html" class="product-link"></a>
+                    <a [routerLink]="[ '/products', product.id]" class="product-link"></a>
                     <!-- / product-link -->
                     <img [src]="product.image_url" alt="">
                     <!-- / product-image -->
-
-                    <!-- product-hover-tools -->
-                    <div class="product-hover-tools">
-                        <a href="single-product.html" class="view-btn">
-                            <i class="lnr lnr-eye"></i>
-                        </a>
-                        <a href="shopping-cart.html" class="add-to-cart">
-                            <i class="lnr lnr-cart"></i>
-                        </a>
-                    </div><!-- / product-hover-tools -->
-
                     <!-- product-details -->
                     <div class="product-details">
                         <h3 class="product-title">{{ product.name }}</h3>
                         <h6 class="product-price">
-                            <del>{{ product.price }}</del>
-                            <span class="sale-price">$79</span>
+                            <span class="sale-price">{{ product.price | currency: 'VND' }}</span>
                         </h6>
                     </div><!-- / product-details -->
                 </div>

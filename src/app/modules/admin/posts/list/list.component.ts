@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PostService} from '../../../../core/service/post/index.service';
+import { PostService } from '../../../../core/service/post/index.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,7 +8,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  posts: Array<any>;
+  posts: Array<any> = [];
+  postsSearch: Array<any>;
   page = 1;
   pageSize = 5;
   constructor(
@@ -23,10 +24,13 @@ export class ListComponent implements OnInit {
           ...e.payload.doc.data()
         };
       });
+      this.postsSearch = [
+        ...this.posts
+      ];
     });
   }
 
-  trackPostBy(item, index){
+  trackPostBy(item, index) {
     return item.id;
   }
 
@@ -56,6 +60,14 @@ export class ListComponent implements OnInit {
           );
         });
       }
+    });
+  }
+
+  searchName(event) {
+    const { value } = event.target;
+    return this.posts = this.postsSearch.filter(c => {
+      let regex = new RegExp(value, 'mi');
+      return regex.test(c.title) || regex.test(c.description);
     });
   }
 

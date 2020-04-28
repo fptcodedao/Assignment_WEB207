@@ -1,5 +1,5 @@
 <ngb-carousel *ngIf="carousels">
-    <ng-template ngbSlide *ngFor="let carousel of carousels" [style.display]="'none'">
+    <ng-template ngbSlide *ngFor="let carousel of carousels">
         <div class="picsum-img-wrapper">
             <img [src]="carousel.image_url" [alt]="carousel.name">
         </div>

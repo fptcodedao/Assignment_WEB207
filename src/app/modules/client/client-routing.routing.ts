@@ -1,9 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ClientComponent } from './client.component';
 import { DefaultComponent } from './../client/default/default.component';
-import {AboutComponent} from './component/about/about.component';
-import {ServiceComponent} from './component/service/service.component';
-import {ContactComponent} from './component/contact/contact.component';
+import { AboutComponent } from './component/about/about.component';
+import { ServiceComponent } from './component/service/service.component';
+import { ContactComponent } from './component/contact/contact.component';
+import { ShopComponent } from './component/shop/shop.component';
+import { DetailComponent } from './product/detail/detail.component';
+import { ListComponent } from './product/list/list.component';
 
 const routes: Routes = [
   {
@@ -37,6 +40,26 @@ const routes: Routes = [
         data: {
           title: 'Contact'
         }
+      },
+      {
+        path: 'products',
+        component: ShopComponent,
+        children: [
+          {
+            path: '',
+            component: ListComponent,
+            data: {
+              title: 'Shopping'
+            }
+          },
+          {
+            path: ':id',
+            component: DetailComponent,
+            data: {
+              title: 'Product Detail'
+            }
+          }
+        ]
       }
     ]
   },
